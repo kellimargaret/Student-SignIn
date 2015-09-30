@@ -14,7 +14,8 @@ studentCheckin.config(function($stateProvider, $urlRouteProvider) {
   });
 
   $stateProvider.state('instructor-view', {
-    url: "/instructor-view.html",
+    url: "/instructor-view",
+    templateURL: "partials/instructor-view.html"
     controller: "StudentCtrl"
   });
 });
