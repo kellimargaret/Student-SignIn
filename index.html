@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="studentCheckin">
   <head>
-    <title>Student Checkin</title>
+    <title>Epicodus Student Check-in</title>
     <script src="lib/angular.js"></script>
     <script src="lib/angular-ui-router.js"></script>
     <script src="app.js"></script>
@@ -10,11 +10,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   </head>
   <body>
+
+<!-- A container to hold nav links -->
     <div class="container">
-      <a ui-sref="home">Home</a> |
-      <a ui-sref="student-view">Sign In</a> |
-      <a ui-sref="instructor-view">Who is Here</a>
+      <a ui-sref="home">Home</a> | <a ui-sref="student-view">Sign In</a> | <a ui-sref="instructor-view">Who's Here</a>
     </div>
 
+    <div class="container">
+      <div ui-view></div>
+    </div>
   </body>
 </html>

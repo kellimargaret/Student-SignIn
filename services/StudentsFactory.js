@@ -1,4 +1,4 @@
-studentCheckin.facotry('StudentsFactory', function StudentsFactory() {
+studentCheckin.factory('StudentsFactory', function StudentsFactory() {
   var factory = {};
   factory.students = [];
 
@@ -6,4 +6,5 @@ studentCheckin.facotry('StudentsFactory', function StudentsFactory() {
     factory.students.push({name: factory.studentName, checkinStatus: false});
     factory.studentName = null;
   };
+  return factory;
 })

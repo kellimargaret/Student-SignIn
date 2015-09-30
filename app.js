@@ -1,6 +1,6 @@
 var studentCheckin = angular.module('studentCheckin', ['ui.router']);
 
-studentCheckin.config(function($stateProvider, $urlRouteProvider) {
+studentCheckin.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state('home', {
     url: "",
     templateUrl: "partials/home.html",
@@ -8,14 +8,14 @@ studentCheckin.config(function($stateProvider, $urlRouteProvider) {
   });
 
   $stateProvider.state('student-view', {
-    url: "/student-view",
+    url: "/students-view",
     templateUrl: "partials/student-view.html",
-    controller: "StudentCtrl"
+    controller: "StudentsCtrl"
   });
 
   $stateProvider.state('instructor-view', {
     url: "/instructor-view",
-    templateURL: "partials/instructor-view.html"
-    controller: "StudentCtrl"
+    templateUrl: "partials/instructor-view.html",
+    controller: "StudentsCtrl"
   });
 });

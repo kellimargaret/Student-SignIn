@@ -4,6 +4,6 @@ studentCheckin.controller('StudentsCtrl', function StudentsCtrl($scope, Students
 
   $scope.toggleCheckin = function(student) {
     var index = $scope.students.indexOf(student);
-    $scope.students[index].checkinStatus = !scope.students[index].checkinStatus;
+    $scope.students[index].checkinStatus = !$scope.students[index].checkinStatus;
   };
 });
