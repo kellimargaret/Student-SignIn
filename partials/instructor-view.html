@@ -1,22 +1,23 @@
-<div class="well">
-  <h1>Welcome to Epicodus</h1>
-  <a ui-sref="student-view">
-    <button class="btn btn-success">Sign In</button>
-  </a>
-  <a ui-sref="instructor-view">
-    <button class="btn btn-info">Who's Here</button>
-  </a>
-</div>
+<div ng-show="students.length">
+  <div class="well">
+<!-- Will list only students who's checkinStatus is true -->
+    <h1>Here</h1>
+    <ul>
+      <li ng-repeat="item in students | orderBy:'name' | filter:{checkinStatus:true}">
+        <h4>{{ item.name }}
+        </h4>
+      </li>
+    </ul>
+  </div>
 
-<!-- Form to add new students -->
-<div class="well">
-  <h3>Add a new student:</h3>
-  <form ng-submit="StudentsFactory.addStudent()" class="form-inline" role="form">
-    <div class="form-group">
-      <input type="text" ng-model="StudentsFactory.studentName" class="form-control" placeholder="Name...">
-    </div>
-    <button type="submit" class="btn btn-success">Submit</button>
-  </form>
+<!-- Will list only students who's checkinStatus is false -->
+  <div class="well">
+    <h1>Not Here</h1>
+    <ul>
+      <li ng-repeat="item in filtered = students | orderBy:'name' | filter:{checkinStatus:false}">
+        <h4>{{ item.name }}
+        </h4>
+      </li>
+    </ul>
+  </div>
 </div>
-
-<div ui-view> </div>
